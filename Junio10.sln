@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Junio10", "Junio10\Junio10.csproj", "{2DD0958D-6B2A-40F8-AF0A-20FFEB230A46}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED3FD087-C34A-45EF-A99A-58993CAB8CEA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		..\..\Users\jorge\Documents\Weather.xmind = ..\..\Users\jorge\Documents\Weather.xmind
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
