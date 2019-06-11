@@ -8,7 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED3FD087-C34A-45EF-A99A-58993CAB8CEA}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		..\..\Users\jorge\Documents\Weather.xmind = ..\..\Users\jorge\Documents\Weather.xmind
+		Weather.xmind = Weather.xmind
 	EndProjectSection
 EndProject
 Global
