@@ -3,16 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 using System.Web.UI.WebControls;
 
 namespace Junio10.servicio
 {
     public class WeatherSrv
     {
-        public static void Insertar(Weather clima,List<Weather> lista)
+        public static void Insertar(Weather clima,HttpSessionState sesion)
         {
-            lista.Add(clima);
-          
+            List<Weather> climas =ListarTodo(sesion); // leemos
+            climas.Add(clima); // agregamos
+            sesion["listado"] = climas; // guardamos la sesion
+
         }
         public static Weather Factory(TextBox txtid,TextBox txtFecha,TextBox txtEstado
             ,TextBox txtLugar)
@@ -25,9 +28,16 @@ namespace Junio10.servicio
             nuevoClima.Lugar=txtLugar.Text;
             return nuevoClima;
         }
-        public static List<Weather> ListarTodo()
+        public static List<Weather> ListarTodo(HttpSessionState sesion)
         {
-            return new List<Weather>();
+            if (sesion["listado"]!=null)
+            {
+                return (List<Weather>)sesion["listado"];
+            } else
+            {
+                return new List<Weather>();
+            }
+            
         }
     }
 }

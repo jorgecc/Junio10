@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebInsertar.aspx.cs" Inherits="Junio10.WebInsertar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormInsertarPais.aspx.cs" Inherits="Junio10.WebFormInsertarPais" %>
 
 <!DOCTYPE html>
 
@@ -12,15 +12,12 @@
             Id: 
             <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
             <br />
-            Fecha:<asp:TextBox ID="TextBoxFecha" runat="server"></asp:TextBox>
-            <br />
-            Estado:<asp:TextBox ID="TextBoxEstado" runat="server"></asp:TextBox>
-            <br />
-            Ubicacion:<asp:TextBox ID="TextBoxUbicacion" runat="server"></asp:TextBox>
+            Nombre:<asp:TextBox ID="TextBoxNombre" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             <br />
         </div>
     </form>
+   
 </body>
 </html>

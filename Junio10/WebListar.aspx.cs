@@ -1,4 +1,5 @@
 ﻿using Junio10.Models;
+using Junio10.servicio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +11,11 @@ namespace Junio10
 {
     public partial class WebListar : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Weather> climas;
-            //  Existe un listado?
-            if (Session["listado"]!=null) // Session es un "diccionario".
-            {
-                // si: leemos el listado
-                climas =(List<Weather>) Session["listado"];
-            } else
-            {
-                // no: creamos un listado.
-                climas=new List<Weather>();
-                Session["listado"]=climas; // y guardamos la lista en la sesion
-            }
+            List<Weather> climas=WeatherSrv.ListarTodo(Session);
+
             GridView1.DataSource=climas;
             GridView1.DataBind(); // <-- esto es necesario para refrescar.
 
