@@ -17,15 +17,21 @@ namespace Junio10.servicio
             sesion["listado"] = climas; // guardamos la sesion
 
         }
-        public static Weather Factory(TextBox txtid,TextBox txtFecha,TextBox txtEstado
-            ,TextBox txtLugar)
+        public static Weather Factory(TextBox txtid
+                ,TextBox txtFecha
+                ,TextBox txtEstado
+                ,DropDownList comboUbicacion)
         {
             
             Weather nuevoClima=new Weather();
+            nuevoClima.Pais=new Pais(); 
             nuevoClima.WeatherId=Convert.ToInt32(txtid.Text);
             nuevoClima.Fecha=txtFecha.Text;
             nuevoClima.Estado=txtEstado.Text;
-            nuevoClima.Lugar=txtLugar.Text;
+            nuevoClima.Pais.PaisId=Convert.ToInt32(
+                    comboUbicacion.SelectedItem.Value);
+            nuevoClima.Pais.Nombre=comboUbicacion
+                .SelectedItem.Text;
             return nuevoClima;
         }
         public static List<Weather> ListarTodo(HttpSessionState sesion)

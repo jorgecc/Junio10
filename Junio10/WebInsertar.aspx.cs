@@ -13,7 +13,11 @@ namespace Junio10
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack) { 
+                // solo cargar este codigo la primera vez
+                DropDownList1.DataSource=PaisSrv.ListarTodo(Session);
+                DropDownList1.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -22,7 +26,7 @@ namespace Junio10
             Weather clima=new Weather();
             // 2) leer los valores de los cuadros de texto y guardarlos en el objeto
             clima=WeatherSrv.Factory(TextBoxId, TextBoxFecha
-                    , TextBoxEstado,TextBoxUbicacion);
+                    , TextBoxEstado,DropDownList1);
             // 3) agregar el objeto a la lista
             WeatherSrv.Insertar(clima,Session);
             // 4) devolvernos a la pagina de la lista

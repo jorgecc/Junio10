@@ -27,6 +27,19 @@ namespace Junio10.servicio
         }
         public static List<Pais> ListarTodo(HttpSessionState sesion)
         {
+            var lista=new List<Pais>();
+            var pais=new Pais();
+            pais.PaisId=1;
+            pais.Nombre="Chile";
+            lista.Add(pais);
+
+            pais = new Pais();
+            pais.PaisId = 2;
+            pais.Nombre = "Argentina";
+            lista.Add(pais);
+            return lista;
+
+
             if (sesion["llavepais"] !=null)
             {
                 return (List<Pais>)sesion["llavepais"];

@@ -16,7 +16,8 @@
             <br />
             Estado:<asp:TextBox ID="TextBoxEstado" runat="server"></asp:TextBox>
             <br />
-            Ubicacion:<asp:TextBox ID="TextBoxUbicacion" runat="server"></asp:TextBox>
+            Ubicacion:<asp:DropDownList ID="DropDownList1" runat="server" DataTextField="Nombre" DataValueField="PaisId">
+            </asp:DropDownList>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             <br />
