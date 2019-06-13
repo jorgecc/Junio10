@@ -9,7 +9,7 @@ namespace Junio10.Models
     {
         public int WeatherId { set; get;} =0;
         public string Fecha { set; get;} ="";
-        public string Estado { set; get;} ="";
+        public Estado Estado { set; get;} =new Estado();
         //public string Lugar { set; get;}
         public Pais Pais { set; get;} = new Pais();
 

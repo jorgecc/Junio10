@@ -14,7 +14,8 @@
             <br />
             Fecha:<asp:TextBox ID="TextBoxFecha" runat="server"></asp:TextBox>
             <br />
-            Estado:<asp:TextBox ID="TextBoxEstado" runat="server"></asp:TextBox>
+            Estado:<asp:DropDownList ID="DropDownList2" runat="server" DataTextField="Nombre" DataValueField="EstadoId">
+            </asp:DropDownList>
             <br />
             Ubicacion:<asp:DropDownList ID="DropDownList1" runat="server" DataTextField="Nombre" DataValueField="PaisId">
             </asp:DropDownList>

@@ -17,6 +17,8 @@ namespace Junio10
                 // solo cargar este codigo la primera vez
                 DropDownList1.DataSource=PaisSrv.ListarTodo(Session);
                 DropDownList1.DataBind();
+                DropDownList2.DataSource = EstadoSrv.ListarTodo();
+                DropDownList2.DataBind();
             }
         }
 
@@ -26,11 +28,16 @@ namespace Junio10
             Weather clima=new Weather();
             // 2) leer los valores de los cuadros de texto y guardarlos en el objeto
             clima=WeatherSrv.Factory(TextBoxId, TextBoxFecha
-                    , TextBoxEstado,DropDownList1);
+                    , DropDownList2,DropDownList1);
             // 3) agregar el objeto a la lista
             WeatherSrv.Insertar(clima,Session);
             // 4) devolvernos a la pagina de la lista
             Response.Redirect("WebListar.aspx");
+
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

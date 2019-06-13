@@ -19,7 +19,7 @@ namespace Junio10.servicio
         }
         public static Weather Factory(TextBox txtid
                 ,TextBox txtFecha
-                ,TextBox txtEstado
+                , DropDownList comboEstado
                 ,DropDownList comboUbicacion)
         {
             
@@ -27,7 +27,12 @@ namespace Junio10.servicio
             nuevoClima.Pais=new Pais(); 
             nuevoClima.WeatherId=Convert.ToInt32(txtid.Text);
             nuevoClima.Fecha=txtFecha.Text;
-            nuevoClima.Estado=txtEstado.Text;
+
+            nuevoClima.Estado.EstadoId = Convert.ToInt32(
+                 comboEstado.SelectedItem.Value);
+            nuevoClima.Estado.Nombre = comboEstado.SelectedItem.Text;
+
+
             nuevoClima.Pais.PaisId=Convert.ToInt32(
                     comboUbicacion.SelectedItem.Value);
             nuevoClima.Pais.Nombre=comboUbicacion
