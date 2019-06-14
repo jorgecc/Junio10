@@ -13,17 +13,20 @@ namespace Junio10
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { 
+           if (!IsPostBack) { 
                 // solo cargar este codigo la primera vez
                 DropDownList1.DataSource=PaisSrv.ListarTodo(Session);
                 DropDownList1.DataBind();
+
+
                 DropDownList2.DataSource = EstadoSrv.ListarTodo();
                 DropDownList2.DataBind();
-            }
+           }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+         
             // 1) crear un objeto clima
             Weather clima=new Weather();
             // 2) leer los valores de los cuadros de texto y guardarlos en el objeto
